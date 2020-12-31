@@ -1,0 +1,26 @@
+{
+  "name": "acs-browser-sdks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:calling": "browserify calling.js -o dist/calling.js",
+    "build:chat": "browserify chat.js -o dist/chat.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-kwan/acs-browser-sdks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex-kwan/acs-browser-sdks/issues"
+  },
+  "homepage": "https://github.com/alex-kwan/acs-browser-sdks#readme",
+  "dependencies": {
+    "@azure/communication-calling": "^1.0.0-beta.3",
+    "@azure/communication-chat": "^1.0.0-beta.3",
+    "browserify": "^17.0.0"
+  }
+}
