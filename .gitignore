@@ -102,4 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
-public/scripts/*
+
+scripts/
+public/scripts/calling.js
+public/scripts/chat.js
+public/scripts/common.js
