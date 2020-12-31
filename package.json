@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:calling": "browserify calling.js -o dist/calling.js",
-    "build:chat": "browserify chat.js -o dist/chat.js"
+    "build": "npm run build:calling && npm run build:common && npm run build:chat",
+    "build:calling": "webpack --config configs/calling.config.js && copyfiles dist/calling.js -u 1 public/scripts",
+    "build:common": "webpack --config configs/common.config.js && copyfiles dist/common.js -u 1 public/scripts",
+    "build:chat": "webpack --config configs/chat.config.js && copyfiles dist/chat.js -u 1 public/scripts"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,16 @@
   "dependencies": {
     "@azure/communication-calling": "^1.0.0-beta.3",
     "@azure/communication-chat": "^1.0.0-beta.3",
-    "browserify": "^17.0.0"
-  }
+    "@azure/communication-common": "^1.0.0-beta.3",
+    "browserify": "^17.0.0",
+    "esmify": "^2.1.1"
+  },
+  "devDependencies": {
+    "@webpack-cli/init": "^1.1.0",
+    "babel-loader": "^8.2.2",
+    "copyfiles": "^2.4.1",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0"
+  },
+  "sideEffects": true
 }
