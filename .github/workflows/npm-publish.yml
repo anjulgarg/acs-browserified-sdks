@@ -19,9 +19,6 @@ jobs:
           tag=$(git describe --tags --abbrev=0)
           release_name=sdks-$tag
           npm run build
-          cp dist/calling.js ./${release_name}/calling.js
-          cp dist/chat.js ./${release_name}/chat.js
-          cp dist/common.js ./${release_name}/common.js
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
