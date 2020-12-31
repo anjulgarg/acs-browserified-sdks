@@ -19,12 +19,13 @@ jobs:
           tag=$(git describe --tags --abbrev=0)
           release_name=sdks-$tag
           npm run build
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
+      - name: Upload the artifacts
+        uses: skx/github-action-publish-binaries@release-1.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: dist-without-markdown
-          path: |
-            dist
+          releaseId: $tag
+          args: 'dist/*.js'
 
 #   publish-npm:
 #     needs: build

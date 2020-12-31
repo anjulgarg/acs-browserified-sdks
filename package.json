@@ -1,5 +1,5 @@
 {
-  "name": "acs-browser-sdks",
+  "name": "acs-browserified-sdks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
