@@ -19,9 +19,9 @@ jobs:
           tag=$(git describe --tags --abbrev=0)
           release_name=sdks-$tag
           npm run build
-          cp dist/calling.js ./calling.js
-          cp dist/chat.js ./chat.js
-          cp dist/common.js ./common.js
+          cp dist/calling.js ./${release_name}/calling.js
+          cp dist/chat.js ./${release_name}/chat.js
+          cp dist/common.js ./${release_name}/common.js
 
 #   publish-npm:
 #     needs: build
