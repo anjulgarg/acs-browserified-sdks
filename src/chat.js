@@ -5,6 +5,6 @@ if (window.communications) {
 }
 else {
     window.communications = {
-        chat: chat
+        chat: chat,
     }
 }
