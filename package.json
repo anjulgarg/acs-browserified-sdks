@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:calling && npm run build:common && npm run build:chat && npm run build:admin",
+    "build": "npm run build:calling && npm run build:common && npm run build:chat && npm run build:identity",
     "build:calling": "webpack --config configs/calling.config.js && copyfiles dist/calling.js -u 1 public/scripts",
     "build:common": "webpack --config configs/common.config.js && copyfiles dist/common.js -u 1 public/scripts",
     "build:chat": "webpack --config configs/chat.config.js && copyfiles dist/chat.js -u 1 public/scripts",
-    "build:admin": "webpack --config configs/admin.config.js && copyfiles dist/admin.js -u 1 public/scripts"
+    "build:identity": "webpack --config configs/identity.config.js && copyfiles dist/identity.js -u 1 public/scripts"
   },
   "repository": {
     "type": "git",
